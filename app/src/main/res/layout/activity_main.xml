@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/pokedex_background"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:fontFamily="@font/pokemon_font"
+        android:text="POKÉDEX"
+        android:textSize="45sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/search"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/title">
+
+        <EditText
+            android:id="@+id/pokemonSearch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="Pokémon Name"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="7dp"
+            android:textSize="20sp"
+            android:fontFamily="@font/pokemon_font"/>
+
+        <ImageButton
+            android:id="@+id/searchButton"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="7dp"
+            android:scaleType="fitCenter"
+            android:background="@android:color/transparent"
+            android:src="@drawable/search_button"
+            android:contentDescription="Search Button"/>
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/pokemonSprite"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/search" />
+
+    <LinearLayout
+        android:id="@+id/pokemonNameNo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal"
+        android:gravity="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/pokemonSprite">
+
+        <TextView
+            android:id="@+id/pokemonName"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_marginRight="5dp"
+            android:fontFamily="@font/pokemon_font"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+        <TextView
+            android:id="@+id/pokemonNo"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:fontFamily="@font/pokemon_font"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/pokemonTypes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginTop="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/pokemonNameNo">
+
+        <ImageView
+            android:id="@+id/pokemonType1"
+            android:layout_height="45dp"
+            android:layout_width="100dp"
+            android:layout_marginRight="5dp"
+            android:contentDescription="Pokémon Type 1"/>
+
+        <ImageView
+            android:id="@+id/pokemonType2"
+            android:layout_height="45dp"
+            android:layout_width="100dp"
+            android:layout_marginLeft="5dp"
+            android:contentDescription="Pokémon Type 2"/>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/pokemonDescription"
+        android:layout_width="370dp"
+        android:layout_height="200dp"
+        android:layout_marginTop="10dp"
+        android:padding="25dp"
+        android:paddingLeft="25dp"
+        android:fontFamily="@font/pokemon_font"
+        android:textSize="18sp"
+        android:background="@drawable/pokemon_border"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/pokemonTypes"
+        app:layout_constraintBottom_toTopOf="@+id/navigation"/>
+
+    <LinearLayout
+        android:id="@+id/navigationLabels"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/navigation">
+
+        <TextView
+            android:id="@+id/backwardLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:layout_marginRight="20dp"
+            android:fontFamily="@font/pokemon_font"
+            android:textSize="16sp"
+            android:text="Back"/>
+
+        <TextView
+            android:id="@+id/forwardLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:layout_marginLeft="20dp"
+            android:fontFamily="@font/pokemon_font"
+            android:textSize="16sp"
+            android:text="Next"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/navigation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="30dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <ImageButton
+            android:id="@+id/backButton"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginRight="20dp"
+            android:scaleType="fitCenter"
+            android:background="@android:color/transparent"
+            android:src="@drawable/backwards"
+            android:contentDescription="Back Button"/>
+
+        <ImageButton
+            android:id="@+id/forwardButton"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="20dp"
+            android:scaleType="fitCenter"
+            android:background="@android:color/transparent"
+            android:src="@drawable/forwards"
+            android:contentDescription="Forward Button"/>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+<!-- Class Comments: Increase font of description, make description box taller, label navigation buttons -->
+<!-- Comments unsure how to implement: Center type icon of single typed Pokémon
+        because there are two ImageViews-->
